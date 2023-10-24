@@ -1,0 +1,151 @@
+<!--Users Home page-->
+
+<!DOCTYPE html>
+
+<html>
+
+<head>
+{% load static %}
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>EvotingApp | LogIn page</title>
+	<link rel="stylesheet" href="/static/style.css" />
+</head>
+
+<body>
+
+	<div class="UsersContainer">
+		<div class="header">
+			<div class="hlogo">
+				<img src="/static/logo.png" alt="logo1" class="banner">
+			</div>
+			<div class="htitle">
+				<h1>E-Voting System</h1>
+			</div>
+			<div class="logintype">
+				<ul class="hmenubar">
+					<li><a href="/adminlogin" target="_blank">admin Login</a></li>
+					<li><a href="/partylogin" target="_blank">Party Login</a></li>
+				</ul>
+			</div>
+		</div>
+		<div class="nav">
+			<ul class="menubar">
+				<li><a href="/uhome">Home</a></li>
+				<li><a href="/ureg" target="_blank">Registration</a></li>
+				<li><a href="/userv" target="_blank">Services</a></li>
+				<li><a href="/uabout" target="_blank">About</a></li>
+				<li><a href="/ucontact" target="_blank">Contact US</a></li>
+			</ul>
+			<div class="search">
+				<form>
+					<input type="text" placeholder="Search"></input>
+					<input type="button" value="Search" style="height: 24px; width: 63px;"></input>
+				</form>
+			</div>
+		</div>
+		<div class="usersField">
+			<div class="GridViewLeft">
+				<div class="ajenda">
+					<h3 class="hbg">UP coming Elections</h3>
+					<p>UP coming Elections</p><br>
+					<p>UP coming Elections</p><br>
+					<p>UP coming Elections</p><br>
+					<p>UP coming Elections</p><br>
+					<p>UP coming Elections</p><br>
+					<p>UP coming Elections</p>
+				</div>
+				<div class="meetings">
+					<h3 class="hbg">Manofesto</h3>
+					<p>BJP Manofesto</p><br>
+					<p>CONG Manofesto</p><br>
+					<p>AAP Manofesto</p><br>
+					<p>SP Manofesto</p><br>
+					<p>BSP Manofesto</p>
+				</div>
+			</div>
+			<div class="useraslogin">
+				<h1 class="heading">E-Voter Login</h1>
+				<div class="imgcontainer">
+					<img src="/static/logo.jpg" alt="logo" class="logo">
+				</div>
+				<div>
+					<h2 style="color:red;">{{msg}}</h2>
+				</div>
+				<form method="POST" action="/usersaction/">{% csrf_token %}
+					<table class="tblLogIn">
+						<tr>
+							<td colspan="2" align="center"><label for="logtype"><u>User Login</u></label></td>
+						</tr>
+						<tr>
+							<td><label for="uname">Username : </label></td>
+							<td><input type="text" placeholder="Enter Username" name="uname" title="name required"
+									required oninvalid="this.setCustomValidity('User ID is a must')"></td>
+						</tr>
+						<tr>
+							<td><label for="psw">Password : </label></td>
+							<td><input type="password" placeholder="yyyy-mm-dd" name="psw" required></input></td>
+						</tr>
+						<tr>
+							<td colspan="2" align="center">
+								<input type="submit" value="Login" style="height:30px; width:45px; padding:5px;"></input>
+								<input type="reset" value="Reset" style="height:30px; width:48px; padding:5px;"></input>
+							</td>
+						</tr>
+					</table>
+				</form>
+				<a class="click" href="/ureg" target="_blank">Click here to User Registration</a>
+			</div>
+			<div class="GridViewRight">
+
+				<div class="news">
+					<h3 class="hbg">News</h3>
+					<article>
+						<marquee behavior="scroll" direction="up" scrollamount="2" height="160px"><a class="pnews"
+								href="partynews.html" target="_blank">Party new adhyaksh...</a><br>
+							<a class="pnews" href="partynews.html" target="_blank">Party new adhyaksh...</a><br>
+							<a class="pnews" href="partynews.html" target="_blank">Party new adhyaksh...</a><br>
+							<a class="pnews" href="partynews.html" target="_blank">Party new adhyaksh...</a><br>
+							<a class="pnews" href="partynews.html" target="_blank">Party new adhyaksh...</a><br>
+							<a class="pnews" href="partynews.html" target="_blank">Party new adhyaksh...</a><br>
+							<a class="pnews" href="partynews.html" target="_blank">Party new adhyaksh...</a><br>
+							<a class="pnews" href="partynews.html" target="_blank">Party new adhyaksh...</a><br>
+							<a class="pnews" href="partynews.html" target="_blank">Party new adhyaksh...</a><br>
+							<a class="pnews" href="partynews.html" target="_blank">Party new adhyaksh...</a><br>
+							<a class="pnews" href="partynews.html" target="_blank">Party new adhyaksh...</a><br>
+							<a class="pnews" href="partynews.html" target="_blank">Party new adhyaksh...</a><br>
+							<a class="pnews" href="partynews.html" target="_blank">Party new adhyaksh...</a><br>
+							<a class="pnews" href="partynews.html" target="_blank">Party new adhyaksh...</a><br>
+							<a class="pnews" href="partynews.html" target="_blank">Party new adhyaksh...</a><br>
+							<a class="pnews" href="partynews.html" target="_blank">Party new adhyaksh...</a>
+						</marquee><br>
+					</article>
+					<a href="partynews.html"
+						style="color: orange;text-decoration: underline;float: right;font-weight: bold;">View all</a>
+				</div>
+				<div class="events">
+					<h3 class="hbg">Events</h3>
+					<a class="pajenda" href="partynews.html" target="_blank">Party New Events</a><br>
+					<a class="pajenda" href="partynews.html" target="_blank" style="float: left;">22/06/2022 at
+						Raebareli</a><br>
+					<a class="pajenda" href="partynews.html" target="_blank" style="float: left;">22/06/2022 at
+						Lucknow</a><br>
+					<a class="pajenda" href="partynews.html" target="_blank" style="float: left;">22/06/2022 at
+						Allahabad,<br>(Prayagraj)</a>
+				</div>
+			</div>
+		</div>
+	</div>
+	<div class="footer">
+		<table class="foottable">
+			<tr>
+				<td align="center">e-votingSystem&copy;2022</td>
+				<td><i class="fa fa-envelope"></i><i class="fa fa-facebook-official"></i><i
+						class="fa fa-twiter-official"></i>
+					<i class="fa fa-instagram"></i>
+				</td>
+			</tr>
+		</table>
+	</div>
+</body>
+
+</html>

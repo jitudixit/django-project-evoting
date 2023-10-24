@@ -1,0 +1,109 @@
+<!DOCKTYPE html>
+<html>
+	<head>
+{% load static %}
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+		<title>EvotingApp | users registration page</title>
+		<link rel="stylesheet" href="/static/style.css" />
+		<script src="/static/fnt.js" crossorigin="anonymous"></script>
+	</head>
+
+	<body>
+	
+		<div class="container">
+			<form>
+				<div class = "header">
+				<div class="hlogo">
+					<img src="/static/logo.png" alt="logo1" class="banner">
+				</div>
+				<div class = "htitle">
+					<h1>E-Voting System</h1>
+				</div>
+				<div class = "logintype">
+					<ul class="hmenubar">
+						<li><a href = "/adminlogin" target="_blank">admin Login</a></li>
+						<li><a href = "/partylogin" target="_blank">Party Login</a></li>
+					</ul>
+				</div>
+			</div>
+					<div class="nav">
+						<ul class="menubar">
+							<li><a href = "/uhome" target="_blamk">Home</a></li>
+							<li><a href = "/ureg">Registration</a></li>
+							<li><a href = "/userv" target="_blank">Services</a></li>
+							<li><a href = "/uabout" target="_blank">About</a></li>
+							<li><a href = "/ucontact" target="_blank">Contact US</a></li>
+						</ul>
+							<div class="search">
+								<form>
+									<input type = "text" placeholder="Search" style ="height: 24px;"></input>
+									<input type = "button" value = "Search" style ="height: 24px; width: 63px;"></input>
+								</form>
+							</div>
+					</div>
+					<h1 class = "regheading">Registration form</h1>
+					<div>
+						<h2 style="color: red; position: relative; top: 20%; text-align: center;">{{msg}}</h2>
+					</div>
+					<div class="tblreg">
+						<form method = "POST" action = "/uregaction/">{% csrf_token %}
+							<table>
+								<tr><h5>* Register with mobail number</h5></tr>
+								<tr>
+									<td><label for="Mobailnumber">Mobile Number:</label></td>
+									<td><input type="text" placeholder="Enter Your Mobail Number" name="mobilenumber" required></td>
+								</tr>
+								<tr>
+									<td colspan="2" align="center"><input type= "button" value = "Send OTP" onclick ="alert('otp send successfully')">&nbsp;&nbsp;&nbsp;&nbsp;</td>
+								</tr>
+								<tr>
+									<td><label for="otp">Enter OTP:</label></td>
+									<td><input type="text" placeholder="Enter OTP" name="otp" required></td>
+								</tr>
+								<tr>
+									<td colspan="2" align="center">&nbsp;&nbsp;&nbsp;&nbsp;<input type= "submit" value = "LogIn">
+										<input type= "reset" value = "Reset">
+									</td>
+								</tr>
+							</table>
+						</form>	
+								<h4>Or</h4>
+						<form method = "POST" action = "/uregactionone/">{% csrf_token %}
+							<table>
+									<tr><h5>* Register with aadhar number</h5></tr>
+									<tr>
+										<td><label for="aadharnumber">Aadhar Number:</label></td>
+										<td><input type="text" placeholder = "Aadhar Number" name = "aadharnumber"></td>
+									</tr>
+									<tr>
+										<td colspan="2" align="center"><input type= "button" value = "Send OTP" onclick="alert('otp send successfully')">&nbsp;&nbsp;&nbsp;&nbsp;</td>
+									</tr>
+									<tr>
+										<td><label for="aotp">Enter OTP:</label></td>
+										<td><input type="text" placeholder = "Enter OTP" name = "aotp"></td>
+									</tr>
+									<tr>
+										<td colspan="2" align="center">&nbsp;&nbsp;&nbsp;&nbsp;<input type= "submit" value = "LogIn">
+										<input type= "reset" value = "Reset">
+										</td>
+									</tr>
+							</table>
+						</form>
+					</div>
+					
+				<div class = "footer">
+					<table class = "foottable">
+						<tr>
+							<td align ="center">e-votingSystem&copy;2022</td>
+							<td><i class="fa fa-envelope"></i><i class="fa fa-facebook-official"></i><i class="fa fa-twiter-official"></i>
+							<i class="fa fa-instagram"></i>
+							</td>
+							
+						</tr>
+					</table>
+				</div>
+			</form>
+		</div>
+	</body>
+
+</html>

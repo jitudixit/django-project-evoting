@@ -1,0 +1,145 @@
+<!--Admin Home Page HTML -->
+
+<!DOCTYPE html>
+<html>
+	<head>
+{% load static %}
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+		<title>EvotingApp |admin home page</title>
+		<link rel="stylesheet" href="/static/style.css" />
+	</head>
+	<body>
+		<div class = "Container">
+			<form class = "loginForm">
+				<div class = "header">
+				<div class="hlogo">
+					<img src="/static/logo.png" alt="logo1" class="banner">
+				</div>
+				<div class = "htitle">
+					<h1>E-Voting System</h1>
+				</div>
+				<div class = "logintype">
+					<ul class="hmenubar">
+						<li><a href = "/adminlogin">Log Out</a></li>
+					</ul>
+				</div>
+			</div>
+				<div class="nav">
+					<ul class="menubar">
+						<li><a href = "/adminhome" target="_blank">Home</a></li>
+						<li><a href = "/ser" target="_blank">Services</a></li>
+						<li><a href = "#" target="_blank">About</a></li>
+						<li><a href = "/contact" target="_blank">Contact US</a></li>
+						<li><a href = "/candireg" target="_blank">Candidate Approovel</a></li>
+					</ul>
+						<div class="search">
+							<form>
+								<input type = "text" placeholder="Search"></input>
+								<input type = "button" value = "Search" style ="height: 24px; width: 63px;"></input>
+							</form>
+						</div>
+				</div>
+				<div class="PartyField">
+			<div class="GridViewLeft">
+				<div class="ajenda">
+					<h1 class="hbg">Ajenda</h1>
+					<a class="pajenda" href="partynews.html" target="_blank">Party new adhyaksh...</a><br>
+					<a class="pajenda" href="partynews.html" target="_blank">Party new adhyaksh...</a><br>
+					<a class="pajenda" href="partynews.html" target="_blank">Party new adhyaksh...</a><br>
+					<a class="pajenda" href="partynews.html" target="_blank">Party new adhyaksh...</a><br>
+					<a class="pajenda" href="partynews.html" target="_blank">Party new adhyaksh...</a><br>
+					<a class="pajenda" href="partynews.html" target="_blank">Party new adhyaksh...</a><br>
+					<a class="pajenda" href="partynews.html" target="_blank">Party new adhyaksh...</a><br>
+					<a class="pajenda" href="partynews.html" target="_blank">Party new adhyaksh...</a><br>
+					<a class="pajenda" href="partynews.html" target="_blank">Party new adhyaksh...</a><br>
+					<a class="pajenda" href="partynews.html" target="_blank">Party new adhyaksh...</a><br>
+					<a class="pajenda" href="partynews.html" target="_blank">Party new adhyaksh...</a><br>
+					<a class="pajenda" href="partynews.html" target="_blank">Party new adhyaksh...</a>
+				</div>
+				<div class="meetings">
+					<h1 class="hbg">Meeting</h1>
+					<a class="pajenda" href="partynews.html" target="_blank">Party New meeting</a><br>
+					<a class="pajenda" href="partynews.html" target="_blank"style="float: left;">22/06/2022 at Raebareli</a><br>
+					<a class="pajenda" href="partynews.html" target="_blank"style="float: left;">22/06/2022 at Lucknow</a><br>
+					<a class="pajenda" href="partynews.html" target="_blank"style="float: left;">22/06/2022 at Allahabad,<br>(Prayagraj)</a>
+				</div>
+			</div>
+			<div class="partydetail">
+				<h1 class="hbg">Admin Area</h1>
+				<form>
+					<section class = "voter2">
+					<div class = "vt" onclick="change('congress.png')">
+						<P class = "disp1"></p>
+					</div>
+					<div class = "vt" onclick="change('bjp.png')">
+						<P class = "disp1"></p>
+					</div>
+					<div class = "vt" onclick="change('sp.png')">
+						<P class = "disp1"></p>
+					</div>
+					<div class = "vt" onclick="change('bsp.png')">
+						<P class = "disp1"></p>
+					</div>
+					<div class = "vt" onclick="change('aap.png')">
+						<P class = "disp1"></p>
+					</div>
+				</section>
+				</form>
+				<div class="resultarea">
+                    <label for="winparty">Wing Party Name:</label>
+                    <input type="text" name="winpartyname"/>
+                </div>
+			</div>
+			<div class="GridViewRight">
+
+				<div class="news">
+					<h1 class="hbg">Party News</h1>
+					<article>
+						<marquee behavior="scroll" direction="up" scrollamount="2" height="160px">
+							<a class="pnews" href="partynews.html" target="_blank">Party new adhyaksh...</a><br>
+							<a class="pnews" href="partynews.html" target="_blank">Party new adhyaksh...</a><br>
+							<a class="pnews" href="partynews.html" target="_blank">Party new adhyaksh...</a><br>
+							<a class="pnews" href="partynews.html" target="_blank">Party new adhyaksh...</a><br>
+							<a class="pnews" href="partynews.html" target="_blank">Party new adhyaksh...</a><br>
+							<a class="pnews" href="partynews.html" target="_blank">Party new adhyaksh...</a><br>
+							<a class="pnews" href="partynews.html" target="_blank">Party new adhyaksh...</a><br>
+							<a class="pnews" href="partynews.html" target="_blank">Party new adhyaksh...</a><br>
+							<a class="pnews" href="partynews.html" target="_blank">Party new adhyaksh...</a><br>
+							<a class="pnews" href="partynews.html" target="_blank">Party new adhyaksh...</a><br>
+							<a class="pnews" href="partynews.html" target="_blank">Party new adhyaksh...</a><br>
+							<a class="pnews" href="partynews.html" target="_blank">Party new adhyaksh...</a><br>
+							<a class="pnews" href="partynews.html" target="_blank">Party new adhyaksh...</a><br>
+							<a class="pnews" href="partynews.html" target="_blank">Party new adhyaksh...</a><br>
+							<a class="pnews" href="partynews.html" target="_blank">Party new adhyaksh...</a><br>
+							<a class="pnews" href="partynews.html" target="_blank">Party new adhyaksh...</a>
+						</marquee><br>
+					</article>
+					<a href="partynews.html"
+						style="color: orange;text-decoration: underline;float: right;font-weight: bold;">View all</a>
+				</div>
+				<div class="events">
+					<h1 class="hbg">Party Events</h1>
+					<a class="pajenda" href="partynews.html" target="_blank">Party New Events</a><br>
+					<a class="pajenda" href="partynews.html" target="_blank"style="float: left;">22/06/2022 at Raebareli</a><br>
+					<a class="pajenda" href="partynews.html" target="_blank"style="float: left;">22/06/2022 at Lucknow</a><br>
+					<a class="pajenda" href="partynews.html" target="_blank"style="float: left;">22/06/2022 at Allahabad,<br>(Prayagraj)</a>
+				</div>
+			</div>
+		</div>
+				
+				<div class = "footer">
+					<table class = "foottable">
+						<tr>
+							<td align ="center">e-votingSystem&copy;2022</td>
+							<td><i class="fa fa-envelope"></i><i class="fa fa-facebook-official"></i><i class="fa fa-twiter-official"></i>
+							<i class="fa fa-instagram"></i>
+							</td>
+							
+						</tr>
+					</table>
+				</div>
+			</form>
+			
+		</div>
+	</body>
+</html>

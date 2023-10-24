@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html>
+	<head>
+	<script>
+	function change(im)
+	{
+	var v=document.getElementById("i");
+	v.src="/static/"+im;
+	sessionStorage.setItem("name",im);
+	}
+	function conferm(im)
+	{
+	var v=document.getElementById("i");
+	alert('Hello');
+	v.src="/static/"+im;
+	}
+	function rd()
+	{
+	var v=document.getElementById("i");
+	
+	window.location.href="/voted";
+	}
+	function refresh() {
+	location.href="/vot";
+}
+	</script>
+{% load static %}
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+		<title>EvotingApp</title>
+		<link rel="stylesheet" href="/static/style.css" />
+		<script src="/static/fnt.js" crossorigin="anonymous"></script>
+	</head>
+	<body>
+
+		<div class = "Container">
+			<form class = "loginForm">
+			<div class = "header">
+				<div class="hlogo">
+					<img src="/static/logo.png" alt="logo1" class="banner">
+				</div>
+				<div class = "htitle">
+					<h1>E-Voting System</h1>
+				</div>
+				<div class = "logintype">
+					<ul class="hmenubar">
+						<li><a href = "/adminlogin" target="_blank">admin Login</a></li>
+						<li><a href = "/partylogin" target="_blank">Party Login</a></li>
+					</ul>
+				</div>
+			</div>
+				<div class="nav">
+					<ul class="menubar">
+						<li><a href = "/home">Home</a></li>
+						<li><a href = "/userv" target="_blank">Services</a></li>
+						<li><a href = "/uabout" target="_blank">About</a></li>
+						<li><a href = "/ucontact" target="_blank">Contact US</a></li>
+					</ul>
+						<div class="search">
+							<form>
+								<input type = "text" placeholder="Search"></input>
+								<input type = "button" value = "Search" style ="height: 24px; width: 63px;"></input>
+							</form>
+						</div>
+				</div>
+				<h1 class = "heading">E-Voting Page</h1>
+				<section class = "Voted-party-logo" style = "display : flex;">
+					<div style = " padding-left: 31.5%;"><input type = "reset" name ="reset" onclick="refresh()" value = "Reset" style =" margin-top : 80px; width:100px;height : 50px;"/></div>
+					<img class = "disp" id="i">
+					</img>
+					<div style = " padding-left: 20px;"><input type = "button" name ="submit" value = "Confirm" style =" margin-top : 80px; width:100px;height : 50px;" onclick="rd()" /></div>
+				</section>
+				
+				<section class = "voter">
+					<div class = "vt" onclick="change('congress.png')">
+						<img src ="/static/congress.png">
+					</div>
+					<div class = "vt" onclick="change('bjp.png')">
+						<img src ="/static/bjp.png">
+					</div>
+					<div class = "vt" onclick="change('sp.png')">
+						<img src ="/static/sp.png">
+					</div>
+					<div class = "vt" onclick="change('bsp.png')">
+						<img src ="/static/bsp.png">
+					</div>
+					<div class = "vt" onclick="change('aap.png')">
+						<img src ="/static/aap.png">
+					</div>
+				</section>
+				<div class = "footer">
+					<table class = "foottable">
+						<tr>
+							<td align ="center">e-votingSystem&copy;2022</td>
+							<td><i class="fa fa-envelope"></i><i class="fa fa-facebook-official"></i><i class="fa fa-twiter-official"></i>
+							<i class="fa fa-instagram"></i>
+							</td>
+							
+						</tr>
+					</table>
+				</div>
+			</form>
+			
+		</div>
+	</body>
+</html>

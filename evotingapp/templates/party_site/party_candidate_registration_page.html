@@ -1,0 +1,176 @@
+<!DOCTYPE html>
+<html>
+	<head>
+{% load static %}
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+		<link rel="stylesheet" href="../../static/style.css" />
+		<title>E-voting Systems | Candidate Registration form</title>
+	</head>
+	<body>
+		<div class = "container">
+			<form>
+			<div class = "header">
+				<div class="hlogo">
+					<img src="/static/logo.png" alt="logo1" class="banner">
+				</div>
+				<div class = "htitle">
+					<h1>E-Voting System</h1>
+				</div>
+				<div class = "logintype">
+					<ul class="hmenubar">
+						<li><a href = "/adminlogin" target="_blank">admin Login</a></li>
+						<li><a href = "/partylogin" target="_blank">Party Login</a></li>
+					</ul>
+				</div>
+			</div>
+				<div class="nav">
+					<ul class="menubar">
+						<li><a href = "/login">Home</a></li>
+						<li><a href = "/reg" target="_blank">Registration</a></li>
+						<li><a href="/evot" target="_blank">E-voting</a></li>
+						<li><a href = "/ser" target="_blank">Services</a></li>
+						<li><a href = "#" target="_blank">About</a></li>
+						<li><a href = "/contact" target="_blank">Contact US</a></li>
+						<li><a href = "/candireg" target="_blank">Candidate Registration</a></li>
+					</ul>
+						<div class="search">
+							<form>
+								<input type = "text" placeholder="Search"></input>
+								<input type = "button" value = "Search" style ="height: 24px; width: 63px;"></input>
+							</form>
+						</div>
+				</div>
+				<h1 class = "heading">Candidate Registration Page</h1>
+				<form action="post">
+					<div class = "candidatetable">
+						<table>
+							<tr>
+								<td><label for ="partyname">Pary Name : </label></td>
+								<td><select><option style="text-align: center;">----Select----</option><option value="">Bhartiya Janta Party</option><option value="">Congress</option><option value="">Samaj Vadi Party</option><option value="">Bahujan Samaj Vadi Party</option><option value="">Other (Without Party Condydate)</option></select>
+								</td>
+							</tr>
+							<tr>
+								<td><label for = "voterstate">State : </td>
+								<td><select required id="state"><option style="text-align :center;">----Select----</option><option>Andhra Pradesh</option><option>Arunachal Pradesh</option><option>Assam</option><option>Chhattisgarh</option>
+								<option>Bihar</option><option>Goa</option><option>Haryana</option><option>Himachal Pradesh</option><option>Jharkhand</option><option>Karnataka</option><option>Kerala</option><option>Madhya Pradesh</option>
+								<option>Maharashtra</option><option>Manipur</option><option>Meghalaya</option><option>Mizoram</option><option>Nagaland</option><option>Odisha</option><option>Punjab</option><option>Rajasthan</option><option>Sikkim</option>
+								<option>Tamil Nadu</option><option>Telangana</option><option>Tripura</option><option selected>Uttar Pradesh</option><option>Uttarakhand</option><option>West Bengal</option></select></td></td>
+							</tr>
+							<tr>
+								<td><label for = "voterDistrict">District : </td>
+								<td><select id="city" onclick="check()"><option style="text-align :center;">----Select----</option><option>Agra</option><option>Aligarh</option><option>Allahabad</option><option>Ambedkar Nagar</option>
+								<option>Amethi</option><option>Amroha (J.P. Nagar)</option><option>Auraiya</option><option>Azamgarh</option><option>Baghpat</option><option>Bahraich</option><option>Ballia</option>
+								<option>Balrampur</option><option>Banda</option><option>Barabanki</option><option>Bareilly</option><option>Basti</option><option>Bhadohi</option><option>Bijnor</option><option>Budaun</option><option>Bulandshahr</option>
+								<option>Chandauli</option><option>Chitrakoot</option><option>Deoria</option><option>Etah</option><option>Etawah</option><option>Faizabad</option><option>Farrukhabad</option><option>Fatehpur</option><option>Firozabad</option>
+								<option>Gautam Buddha Nagar</option><option>Ghaziabad</option><option>Ghazipur</option><option>Gonda</option><option>Gorakhpur</option><option>Hamirpur</option><option>Hapur</option><option>Hardoi</option>
+								<option>Hathras</option><option>Jalaun</option><option>Jaunpur</option><option>Jhansi</option><option>Kannauj</option><option>Kanpur Dehat</option><option>Kanpur Nagar</option><option>Kanshiram Nagar</option>
+								<option>Kaushambi</option><option>Kushinagar (Padrauna)</option><option>Lakhimpur - Kheri</option><option>Lalitpur</option><option>Lucknow</option><option>Maharajganj</option><option>Mahoba</option><option>Mainpuri</option>
+								<option>Mathura</option><option>Mau</option><option>Meerut</option><option>Mirzapur</option><option>Moradabad</option><option>Muzaffarnagar</option><option>Pilibhit</option><option>Pratapgarh</option><option>RaeBareli</option>
+								<option>Rampur</option><option>Saharanpur</option><option>Sambhal (Bhim Nagar)</option><option>Sant Kabir Nagar</option><option>Shahjahanpur</option><option>Shamali</option><option>Shravasti</option>
+								<option>Siddharth Nagar</option><option>Sitapur</option><option>Sonbhadra</option><option>Sultanpur</option><option>Unnao</option><option>Varanasi</option></select></td>
+							</tr>
+							<tr>
+								<td><label for = "voterVidhansabha">Vidhansabha :</td>
+								<td><select id="voterVidhansabha"><option style="text-align :center;">----Select----</option><option>Agra</option><option>Aligarh</option><option>Allahabad</option><option>Ambedkar Nagar</option>
+								<option>Amethi</option><option>Amroha (J.P. Nagar)</option><option>Auraiya</option><option>Azamgarh</option><option>Baghpat</option><option>Bahraich</option><option>Ballia</option>
+								<option>Balrampur</option><option>Banda</option><option>Barabanki</option><option>Bareilly</option><option>Basti</option><option>Bhadohi</option><option>Bijnor</option><option>Budaun</option><option>Bulandshahr</option>
+								<option>Chandauli</option><option>Chitrakoot</option><option>Deoria</option><option>Etah</option><option>Etawah</option><option>Faizabad</option><option>Farrukhabad</option><option>Fatehpur</option><option>Firozabad</option>
+								<option>Gautam Buddha Nagar</option><option>Ghaziabad</option><option>Ghazipur</option><option>Gonda</option><option>Gorakhpur</option><option>Hamirpur</option><option>Hapur</option><option>Hardoi</option>
+								<option>Hathras</option><option>Jalaun</option><option>Jaunpur</option><option>Jhansi</option><option>Kannauj</option><option>Kanpur Dehat</option><option>Kanpur Nagar</option><option>Kanshiram Nagar</option>
+								<option>Kaushambi</option><option>Kushinagar (Padrauna)</option><option>Lakhimpur - Kheri</option><option>Lalitpur</option><option>Lucknow</option><option>Maharajganj</option><option>Mahoba</option><option>Mainpuri</option>
+								<option>Mathura</option><option>Mau</option><option>Meerut</option><option>Mirzapur</option><option>Moradabad</option><option>Muzaffarnagar</option><option>Pilibhit</option><option>Pratapgarh</option><option>RaeBareli</option>
+								<option>Rampur</option><option>Saharanpur</option><option>Sambhal (Bhim Nagar)</option><option>Sant Kabir Nagar</option><option>Shahjahanpur</option><option>Shamali</option><option>Shravasti</option>
+								<option>Siddharth Nagar</option><option>Sitapur</option><option>Sonbhadra</option><option>Sultanpur</option><option>Unnao</option><option>Varanasi</option></select></td>
+							</tr>
+							<tr>
+								<td><label for ="candidatename">Candidate Name : </label></td>
+								<td><input type = "text" placeholder ="Enter Candidate Name" required></input></td>
+							</tr>
+							<tr>
+								<td><label for ="candidatefname">Candidate's Father Name : </label></td>
+								<td><input type = "text" placeholder ="Enter Candidate Father Name" required></input></td>
+							</tr>
+							<tr>
+								<td><label for ="candidatemname">Candidate's Mother Name : </label></td>
+								<td><input type = "text" placeholder ="Enter Candidate Mother Name" required></input></td>
+							</tr>
+							<tr>
+								<td><label for = "id">Candidate Id  : </label></td>
+								<td><label for = "aadhar">Aadhar Number  : </label><input type = "text" placeholder="Enter Aadhar number"></input><label for = "isuedate"> Issue Date : </label><input type = "date" required><br><br><label for = "pan">Pan Card Number  : </label><input type = "text" placeholder="Enter Aadhar number"></input><label for = "isuedate"> Issue Date : </label><input type = "date" required><br><br><label for = "voter">Voter Card Number  : </label><input type = "text" placeholder="Enter Aadhar number"><label for = "isuedate"> Issue Date : </label><input type = "date" required></input></td>
+							</tr>
+							<tr>
+								<td><label for = "dateOfBirth">Date Of Birth : </label></td>
+								<td><input type = "date" required></input></td>
+							</tr>
+							<tr>
+								<td><label for = "selectGender">Gender : </td>
+								<td><input type = "radio" name = "gender" checked value = "male">Male</br><input type = "radio" name = "gender" value = "female">Female</br><input type = "radio" name = "gender" value = "transgender">Trans Gender</td><br><br>
+							</tr>
+							<tr>
+								<td><label for = "maritalstatus">Merital Status : </td>
+								<td><input type = "radio" name = "maritalstatus">Yes<input type = "radio" name = "maritalstatus">No</td>
+							</tr>
+							<tr>
+								<td><label for ="wifename">Wife Name : </label></td>
+								<td><input type = "text" placeholder ="Enter Wife Name" required></input></td>
+							</tr>
+							<tr>
+								<td><label for = "category">Category : </label></td>
+								<td><select required><option style="text-align:center;">----Select----</option><option>Genral</option><option>OBC</option><option>SC</option><option>ST</option></select></td>
+							</tr>
+							<tr>
+								<td><label for = "address">Address : </td>
+								<td><textarea id = "address" name = "address" row = "6" placeholder = "Enter House Number" pattern="[A-Za-z/0-9]{3}" required></textarea></td>
+							</tr>
+							<tr>
+								<td><label for="firstcontactnumber">Contact Number : </label></td>
+								<td><input type="text" placeholder ="Enter Your Number"></td>
+							</tr>
+							<tr>
+								<td><label for="secondcontactnumber">Alternate Contact Number : </label></td>
+								<td><input type="text" placeholder ="Enter Your alternate Number"></td>
+							</tr>
+							<tr>
+								<td><label for="email">E-mail Id : </label></td>
+								<td><input type="text" placeholder="Enther Your Email Id"></td>
+								</tr>
+							<tr>
+								<td><label for="identitymark">Identity Mark : </label></td>
+								<td><input type="text" placeholder="Enter Any Visual Identity Mark"></td>
+							</tr>
+							<tr>
+								<td><label for="photo">Candidate photo : </label></td>
+								<td><input type = "file"></input></td>
+							</tr>
+							<tr>
+								<td><label for="photo">Candidate Signeature : </label></td>
+								<td><input type = "file"></input></td>
+							</tr>
+							
+							
+							
+							
+							<tr>
+								<td colspan = "2" align = "center"><input type = "submit" value = "submit">
+								<input type = "reset" value = "reset"></td>
+							</tr>
+						</table>
+					</div>
+				</form>
+				
+			</form>
+			
+		</div>
+		<div class = "ft">
+					<table class = "foottable">
+						<tr>
+							<td align ="center">e-votingSystem&copy;2022</td>
+							<td><i class="fa fa-envelope"></i><i class="fa fa-facebook-official"></i><i class="fa fa-twiter-official"></i>
+							<i class="fa fa-instagram"></i>
+							</td>
+							
+						</tr>
+					</table>
+				</div>
+	</body>
+</html>

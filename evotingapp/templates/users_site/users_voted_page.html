@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html>
+	<head>
+{% load static %}
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+		<title>EvotingApp | Voted Page</title>
+		<link rel="stylesheet" href="/static/style.css" />
+		<script src="/static/fnt.js" crossorigin="anonymous"></script>
+	<script>
+	function setimg()
+	{
+	let name = sessionStorage.getItem("name");
+	alert("You are voting to "+name+" Press ok to conferm.");
+	im=document.getElementById("i");
+	im.src="/static/"+name;
+	}
+	function printclose(){
+	window.print();
+	window.close();
+	}
+	</script>
+	</head>
+	<body onload="setimg()">
+
+		<div class = "Container">
+			<form class = "loginForm">
+			<div class = "header">
+			<img src="/static/logo.png" alt="logo1" class="logo1">
+			<h1 class = "head">E-Voting System</h1>
+			</div>
+				<div class="nav">
+					<ul class="menubar">
+						<li><a href = "/uhome">Home</a></li>
+						<li><a href = "/userv" target="_blank">Services</a></li>
+						<li><a href = "/uabout" target="_blank">About</a></li>
+						<li><a href = "/ucontact" target="_blank">Contact US</a></li>
+					</ul>
+						<div class="search">
+							<form>
+								<input type = "text" placeholder="Search"></input>
+								<input type = "button" value = "Search" style ="height: 24px; width: 63px;"></input>
+							</form>
+						</div>
+				</div>
+				<h1 class = "heading">You are Voted to</h1>
+				<section class = "Voted-party-logo" style ="padding-left : 40%;">
+					<img class = "disp" id="i">
+					
+					</img>
+					<h3>Thank You, Vote For Your Bright Future.</h3>
+					<div style = " padding-left: 100px;"><input type = "button" name ="submit" value = "Print & Exit" style =" margin-top : 20px; width:100px;height : 50px;" onclick = "printclose()"/></div>
+					
+				</section>
+				<div class = "footer">
+					<table class = "foottable">
+						<tr>
+							<td align ="center">e-votingSystem&copy;2022</td>
+							<td><i class="fa fa-envelope"></i><i class="fa fa-facebook-official"></i><i class="fa fa-twiter-official"></i>
+							<i class="fa fa-instagram"></i>
+							</td>
+							
+						</tr>
+					</table>
+				</div>
+			</form>
+			
+		</div>
+	</body>
+</html>

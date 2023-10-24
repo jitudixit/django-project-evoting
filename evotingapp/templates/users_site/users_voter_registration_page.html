@@ -1,0 +1,167 @@
+<!DOCTYPE html>
+<html>
+	<head>
+{% load static %}
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+		<link rel="stylesheet" href="/static/style.css" />
+		<title>E-voting app | user voter registration page</title>
+		<script>
+			function check()
+			{
+			
+			var indx="";
+			
+				var ct=document.getElementById("city").value;
+				
+				var city=["Lucknow","RaeBareli","Unnao","Sultanpur",];
+				
+				var voterVidhansabha=[["----Select----","Lucknow","Cant","Vishalkhand","IndiraNagar"],["----Select----","RaeBareli","Dalmau","Salon","Unchahar","Rahi","Harchanpur"],["----Select----","a","b","c","d","e","f"],["----Select----","g","h","i","j"]];
+				//alert('hello');
+				for(i=0;i<city.length;i++)
+				{
+				if(city[i]==ct)
+				{
+				
+				indx=i;
+				break;
+				}
+				}
+					document.getElementById("voterVidhansabha").innerHTML="";
+					for(i=0;i<voterVidhansabha[indx].length;i++)
+					document.getElementById("voterVidhansabha").innerHTML+="<option>"+voterVidhansabha[indx][i]+"</option>";
+			}
+		</script>
+	</head>
+	<body>
+		<div class = "container">
+			<form class = "evotingform" name="f">
+			<div class = "header">
+				<div class="hlogo">
+					<img src="/static/logo.png" alt="logo1" class="banner">
+				</div>
+				<div class = "htitle">
+					<h1>E-Voting System</h1>
+				</div>
+				<div class = "logintype">
+					<ul class="hmenubar">
+						<li><a href = "/adminlogin" target="_blank">admin Login</a></li>
+						<li><a href = "/partylogin" target="_blank">Party Login</a></li>
+					</ul>
+				</div>
+			</div>
+				<div class="nav">
+					<ul class="menubar">
+						<li><a href = "/uhome">Home</a></li>
+						<li><a href = "/ureg" target="_blank">Registration</a></li>
+						<li><a href = "/userv" target="_blank">Services</a></li>
+						<li><a href = "/uabout" target="_blank">About</a></li>
+						<li><a href = "/ucontact" target="_blank">Contact US</a></li>
+					</ul>
+						<div class="search">
+							<form>
+								<input type = "text" placeholder="Search"></input>
+								<input type = "button" value = "Search" style ="height: 24px; width: 63px;"></input>
+							</form>
+						</div>
+				</div>
+				<h1 class = "voterheading">E-Voter Registration Page</h1>
+				<div>
+					<h2 style="color: red; position: relative; top: 20%; text-align: center;">{{msg}}</h2>
+				</div>
+				<div class = "tbl">
+				<form method = "POST" action = "/uvregaction/">{% csrf_token %}
+				<table>
+						<tr>
+							<td><label for ="voterIdNumbe">Voter Id Numbe : </label></td>
+							<td><input type = "text" placeholder = "Enter Your Voter Id Number" pattern="[A-Za-z]{0-9}" title="" required name="voterid"></input></td>
+						</tr>
+						<tr>
+							<td><label for = "isuedate">Issue Date : </label></td>
+							<td><input type = "date" name="isu" required style = "width: 100%;"></input></td>
+						</tr>
+						<tr>
+							<td><label for ="voterName">Voter Name : </label></td>
+							<td><input type = "text" placeholder ="Enter Voter Name" name="vname" required></input></td>
+						</tr>
+						<tr>
+							<td><label for = "voterfname">Father Nmae : </td>
+							<td><input type = "text" placeholder = " Enter Your Father Name" name="fname"required></input></td> 
+						</tr>
+						<tr>
+							<td><label for = "voterfname">Mother Nmae : </td>
+							<td><input type = "text" placeholder = " Enter Your Father Name" name="mname"required></input></td> 
+						</tr>
+						<tr>
+							<td><label for = "dateOfBirth">Date Of Birth : </label></td>
+							<td><input type = "date" name="dob"required style = "width: 100%;"></input></td>
+						</tr>
+						<tr>
+							<td><label for = "selectGender">Gender : </td>
+							<td style = "text-align: left;"><input type = "radio" name = "gender" checked value = "male">Male</br><input type = "radio" name = "gender" value = "female">Female</br><input type = "radio" name = "gender" value = "transgender">Trans Gender</td>
+						</tr>
+						<tr>
+							<td><label for = "category">Category : </label></td>
+							<td><select required style = "width: 100%;" name="category"><option style="text-align:center;">----Select----</option><option>Genral</option><option>OBC</option><option>SC</option><option>ST</option></select></td>
+						</tr>
+						<tr>
+							<td><label for = "address">Address : </td>
+							<td><textarea id = "address" name = "address" row = "10" placeholder = "Enter House Number" pattern="[A-Za-z/0-9]{3}" title="Three letter country code" required></textarea></td>
+						</tr>
+						<tr>
+							<td><lablel for = "voterstate">State : </td>
+							<td><select required style="width: 100%;" id="state" name="state"><option style="text-align :center;">----Select----</option><option>Andhra Pradesh</option><option>Arunachal Pradesh</option><option>Assam</option><option>Chhattisgarh</option>
+							<option>Bihar</option><option>Goa</option><option>Haryana</option><option>Himachal Pradesh</option><option>Jharkhand</option><option>Karnataka</option><option>Kerala</option><option>Madhya Pradesh</option>	<option>Maharashtra</option><option>Manipur</option><option>Meghalaya</option><option>Mizoram</option><option>Nagaland</option>
+							<option>Odisha</option><option>Punjab</option><option>Rajasthan</option><option>Sikkim</option>
+							<option>Tamil Nadu</option><option>Telangana</option><option>Tripura</option><option selected>Uttar Pradesh</option><option>Uttarakhand</option><option>West Bengal</option></select></td></td>
+						</tr>
+						<tr>
+							<td><lablel for = "voterDistrict">District : </td>
+							<td><select style="width:100%;" id="city" name ="district" onclick="check()"><option style="text-align :center;">----Select----</option><option>Agra</option><option>Aligarh</option><option>Allahabad</option><option>Ambedkar Nagar</option>
+							<option>Amethi</option><option>Amroha (J.P. Nagar)</option><option>Auraiya</option><option>Azamgarh</option><option>Baghpat</option><option>Bahraich</option><option>Ballia</option>
+							<option>Balrampur</option><option>Banda</option><option>Barabanki</option><option>Bareilly</option><option>Basti</option><option>Bhadohi</option><option>Bijnor</option><option>Budaun</option><option>Bulandshahr</option>
+							<option>Chandauli</option><option>Chitrakoot</option><option>Deoria</option><option>Etah</option><option>Etawah</option><option>Faizabad</option><option>Farrukhabad</option><option>Fatehpur</option><option>Firozabad</option>
+							<option>Gautam Buddha Nagar</option><option>Ghaziabad</option><option>Ghazipur</option><option>Gonda</option><option>Gorakhpur</option><option>Hamirpur</option><option>Hapur</option><option>Hardoi</option>
+							<option>Hathras</option><option>Jalaun</option><option>Jaunpur</option><option>Jhansi</option><option>Kannauj</option><option>Kanpur Dehat</option><option>Kanpur Nagar</option><option>Kanshiram Nagar</option>
+							<option>Kaushambi</option><option>Kushinagar (Padrauna)</option><option>Lakhimpur - Kheri</option><option>Lalitpur</option><option>Lucknow</option><option>Maharajganj</option><option>Mahoba</option><option>Mainpuri</option>
+							<option>Mathura</option><option>Mau</option><option>Meerut</option><option>Mirzapur</option><option>Moradabad</option><option>Muzaffarnagar</option><option>Pilibhit</option><option>Pratapgarh</option><option>RaeBareli</option>
+							<option>Rampur</option><option>Saharanpur</option><option>Sambhal (Bhim Nagar)</option><option>Sant Kabir Nagar</option><option>Shahjahanpur</option><option>Shamali</option><option>Shravasti</option>
+							<option>Siddharth Nagar</option><option>Sitapur</option><option>Sonbhadra</option><option>Sultanpur</option><option>Unnao</option><option>Varanasi</option></select></td></td>
+						</tr>
+						<tr>
+							<td><label for = "voterVidhansabha">Vidhansabha :</td>
+							<td><select style = "width: 100%;" id="voterVidhansabha" name = "vidname"><option style="text-align :center;">----Select----</option><option>Agra</option><option>Aligarh</option><option>Allahabad</option><option>Ambedkar Nagar</option>
+							<option>Amethi</option><option>Amroha (J.P. Nagar)</option><option>Auraiya</option><option>Azamgarh</option><option>Baghpat</option><option>Bahraich</option><option>Ballia</option>
+							<option>Balrampur</option><option>Banda</option><option>Barabanki</option><option>Bareilly</option><option>Basti</option><option>Bhadohi</option><option>Bijnor</option><option>Budaun</option><option>Bulandshahr</option>
+							<option>Chandauli</option><option>Chitrakoot</option><option>Deoria</option><option>Etah</option><option>Etawah</option><option>Faizabad</option><option>Farrukhabad</option><option>Fatehpur</option><option>Firozabad</option>
+							<option>Gautam Buddha Nagar</option><option>Ghaziabad</option><option>Ghazipur</option><option>Gonda</option><option>Gorakhpur</option><option>Hamirpur</option><option>Hapur</option><option>Hardoi</option>
+							<option>Hathras</option><option>Jalaun</option><option>Jaunpur</option><option>Jhansi</option><option>Kannauj</option><option>Kanpur Dehat</option><option>Kanpur Nagar</option><option>Kanshiram Nagar</option>
+							<option>Kaushambi</option><option>Kushinagar (Padrauna)</option><option>Lakhimpur - Kheri</option><option>Lalitpur</option><option>Lucknow</option><option>Maharajganj</option><option>Mahoba</option><option>Mainpuri</option>
+							<option>Mathura</option><option>Mau</option><option>Meerut</option><option>Mirzapur</option><option>Moradabad</option><option>Muzaffarnagar</option><option>Pilibhit</option><option>Pratapgarh</option><option>RaeBareli</option>
+							<option>Rampur</option><option>Saharanpur</option><option>Sambhal (Bhim Nagar)</option><option>Sant Kabir Nagar</option><option>Shahjahanpur</option><option>Shamali</option><option>Shravasti</option>
+							<option>Siddharth Nagar</option><option>Sitapur</option><option>Sonbhadra</option><option>Sultanpur</option><option>Unnao</option><option>Varanasi</option></select></td></td>
+						</tr>
+						<tr>
+							<td colspan="2" align="center">
+							<input type="submit" value="Submit" style= "height:30px; width:55px; padding:5px;"></input>
+							<input type="reset" value="Reset" style= "height:30px; width:50px; padding:5px;"></input>
+							</td>
+						</tr>
+						
+					</table>
+				</form>
+				</div>
+				<div class = "footer">
+					<table class = "foottable">
+						<tr>
+							<td align ="center">e-votingSystem&copy;2022</td>
+							<td><i class="fa fa-envelope"></i><i class="fa fa-facebook-official"></i><i class="fa fa-twiter-official"></i>
+							<i class="fa fa-instagram"></i>
+							</td>
+							
+						</tr>
+					</table>
+				</div>
+			</form>
+		</div>
+	</body>
+</html>

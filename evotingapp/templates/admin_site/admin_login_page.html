@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+
+<html>
+
+	<head>
+{% load static %}
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+		<title>EvotingApp |admin login page</title>
+		<link rel="stylesheet" href="/static/style.css" />
+	</head>
+	<body>
+		<div class = "Container">
+			
+				<div class = "header">
+				<div class="hlogo">
+					<img src="/static/logo.png" alt="logo1" class="banner">
+				</div>
+				<div class = "htitle">
+					<h1>E-Voting System</h1>
+				</div>
+				<div class = "logintype">
+					<ul class="hmenubar">
+						<button type = "button" onclick = "window.close()">Exit</button>
+					</ul>
+				</div>
+			</div>
+				<h1 class = "heading">Admin Login</h1>
+				<div class="imgcontainer">
+					<img src="/static/logo.jpg" alt="logo" class="logo" style = "height : 200px; width : 200px;">
+				</div>
+				<div>
+				<h2 style="color:red;position:absolute;top:20%;left:43%">{{msg}}</h2>
+				</div>
+				
+				<form method="post" action = "/adminloginaction/">{% csrf_token %}
+					<table class ="tblLogIn">
+						<tr>
+							<td><label for="uname">Username : </label></td>
+							<td><input type="text" placeholder="Enter Username" name="uname" title="name required" required oninvalid="this.setCustomValidity('User ID is a must')"></td>
+						</tr>
+						<tr>
+							<td><label for="psw">Password : </label></td>
+							<td><input type="password" placeholder="Enter Password" name="psw" required></input></td>
+						</tr>
+						<tr>
+							<td colspan="2" align="center">
+							<input type="submit" value="Login" style= "height:30px; width:45px; padding:5px;"></input>
+							<input type="reset" value="Reset" style= "height:30px; width:48px; padding:5px;"></input>
+							</td>
+						
+						</tr>
+					</table>
+				</form>
+				<div class = "footer">
+					<table class = "foottable">
+						<tr>
+							<td align ="center">e-votingSystem&copy;2022</td>
+							<td><i class="fa fa-envelope"></i><i class="fa fa-facebook-official"></i><i class="fa fa-twiter-official"></i>
+							<i class="fa fa-instagram"></i>
+							</td>
+							
+						</tr>
+					</table>
+				</div>
+		</div>
+	</body>
+</html>

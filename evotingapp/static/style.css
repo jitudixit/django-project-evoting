@@ -1,0 +1,370 @@
+*{
+	margin : 0;
+	padding : 0;	
+}
+
+body{
+	background-color: aquamarine;
+}
+
+/* Comman CSS*/
+.header{
+	display : flex;
+	width : 100%;
+	background-color : #ffffff;
+	height: 60px;
+	margin-top: 0px;
+}
+
+.hlogo{
+	width :30%;
+	height :60px;
+}
+.hlogo .banner{
+	height :60px;
+	width: 100%;	
+}
+.htitle{
+	width : 40%;
+	text-align : center;
+	color : orange;
+	font-size: 26px;
+}
+
+.logintype{
+	    width: 30%;
+}
+.hmenubar{
+	display: flex;
+    float: right;
+    margin: 9px 20px;
+}
+.logo{
+	border: 2px solid black;
+    border-radius: 100px;
+    height: 200px;
+    width: 200px;	
+}
+
+/*.header .head{
+	
+}*/
+
+.loginForm{
+	position: fixe;
+}
+
+.nav{
+	display: flex;
+	position: absolute;
+	width: 100%;
+	height: 50px;
+	margin-top : 2px;
+}
+
+.menubar{
+	display: flex;
+	width: 82%;
+	height: 50px;
+	color: white;
+	font-weight: bolder;
+	font-size: 20px;
+}
+
+li{	
+	border: 2px solid black;
+    	border-radius: 20px;
+	margin: 2px;
+	list-style: none;
+	padding: 10px 10px 10px 10px;
+	background-color: gray;
+}
+li:hover{
+	background-color: rgb(64, 65, 64);
+}
+/*a:hover{
+	color: gold;
+	background-color: rgb(64, 65, 64);
+}*/
+li a{
+	text-decoration: none;
+	color:#fdfdfd;
+}
+.search{
+	padding-top: 11px;
+	display: flex;
+}
+
+.imgcontainer{
+		text-align: center;
+		margin: 5px 0 5px 0;
+}
+/*.logo{
+	border-radius: 70%;
+}*/
+/*Users site css*/
+.usersField{
+	margin-top: 52px;
+	display: flex;
+}
+.useraslogin{
+	width: 980px;
+    text-align: center;
+    border: 2px solid black;
+	margin: 2px;
+	height: 465px;
+}
+.tblLogIn{
+	border : 2px solid black;
+	border-radius: 20px;
+	height: 20vh;
+	width: 21vw;
+	padding-left: 5px;
+	font-size : 20px;
+	margin-left: auto;
+	margin-right: auto;
+	margin-top: 25px;
+}
+.tbl{
+	border: 2px solid black;
+	border-radius: 20px;
+	width: 320px;
+	height: 410px;
+	padding: 3px 0px 3px 28px;
+	margin: auto;
+}
+.tblreg{
+	border: 2px solid black;
+	border-radius: 20px;
+	width: 320px;
+	height: 300px;
+	padding: 3px 0px 3px 28px;
+	margin: auto;
+}
+h4{
+	text-align: center;
+	padding: 10px;
+}
+h5{
+	color : red;
+	text-align : left;
+}
+button
+{
+	border-radius : 5px;
+	padding : 5px;
+	text-decoration : none;
+}
+a{
+	text-decoration : none;
+	color : black;
+}
+input{
+	height:20px;
+}
+
+textarea{
+	height :50px;
+	width : 100%;
+}
+
+.candidatetable{
+	border: 2px solid black;
+    	height: auto;
+    	width: 55%;
+	margin : auto;
+	padding-left : 10px;
+}
+.ft
+{
+	position:absolute;
+	bottom:auto;
+	color : white;
+	width : 100%;
+	height : 40px;
+	background-color : #000000a3;
+}
+
+.footer{
+	position:absolute;
+	bottom:0;
+	color : white;
+	width : 100%;
+	height : 40px;
+	background-color : #000000a3;
+	
+}
+.footer .foottable{
+	width: 100%;
+}
+.def{
+	margin-top: 60px;
+	padding: 0 50px;
+}
+
+.tb{
+	position: absolute;
+    	left: 40%;
+    	top: 28%;
+    	border: 2px solid black;
+    	padding: 20px;
+    	font-size: 20px;
+    	border-radius: 20px;
+}
+.conttbl{
+	height : 30vh;
+}
+.decoration{
+	display : flex;
+	position:absolute;
+	background-color : #ffffff;
+	width :100%;
+	height : 25%;
+	bottom: 40px;
+}
+.dec{
+	color: white;
+	font-size: 20px;
+	width: 30%;
+	background-color: rebeccapurple;
+	text-align: -webkit-center;;
+}
+.pic{
+	color : white;
+	text-align: -webkit-center;
+	background-color: orange;
+	width: 34%;
+	font-size : 20px;
+}
+.map{
+	color : white;
+	text-align: -webkit-center;
+	background-color: orange;
+	width: 36%;
+	font-size : 20px;
+}
+.click{
+	text-decoration: none; 
+	font-size: 20px;
+}
+.voter{
+	display: flex;
+    	position: absolute;
+    	bottom: 36px;
+    	padding-left: 30px;
+}
+.vt img{
+	border: 2px solid #000000;
+	transition: 0.3s;
+	border-radius: 25px;
+  	cursor: pointer;
+	width : 240px; 
+	height : 200px;
+	border : 2;
+	padding : 5px;
+}
+.vt img:hover {
+	opacity: 0.7;
+	width : 245px; 
+	height : 205px;
+}
+.vt{
+	padding: 0 5px 0 0;
+}
+.disp{
+	border: 2px solid #000000;
+	border-radius: 25px;
+    	width: 200px;
+    	height: 200px;
+    	margin-left: 50px;
+}
+.voter1{
+	display: flex;
+    	position: absolute;
+    	top: 140px;
+    	padding-left: 10px;
+}
+
+
+/*<!--Party Site CSS-->*/
+.PartyField{
+	margin-top: 52px;
+	display: flex;
+} 
+.GridViewLeft{
+	display: grid;
+    height: 465px;
+    width: 180px;
+    text-align: center;
+    border: 2px solid black;
+    margin: 2px;
+}
+.partydetail{
+	width: 980px;
+    text-align: center;
+    border: 2px solid black;
+	margin: 2px;
+	height: 465px;
+}
+.GridViewRight{
+	display: grid;
+    height: 465px;
+    width: 180px;
+    text-align: center;
+    border: 2px solid black;
+    margin: 2px;
+}
+.hbg{
+	background-color: burlywood;
+	text-decoration: underline;
+	padding: 0;
+}
+.plogo{
+	height: 100px;
+    width: 100px;
+	padding: 2px;
+    float: left;
+    border-radius: 50%;
+}
+.news{
+	height: 235px;
+}
+.events{
+	height: 235px;
+}
+.pnews{
+	text-decoration: none;
+}
+.pajenda{
+	text-decoration: none;
+}
+.ajenda{
+	height: 235px;
+}
+.meetings{
+	height: 235px;
+}
+
+/* Users site CSS*/
+
+.heading{
+	/*margin-top: 20px;*/
+	text-align : center;
+	color : orange;
+    	font-size: 45px;
+}
+
+.regheading{
+	margin-top: 60px;
+	text-align : center;
+	color : orange;
+    	font-size: 45px;
+}
+.voterheading{
+	margin-top: 45px;
+	text-align : center;
+	color : orange;
+    	font-size: 45px;
+}
+/* Admin site CSS*/
+/* Party site CSS*/

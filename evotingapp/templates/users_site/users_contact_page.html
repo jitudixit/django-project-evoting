@@ -1,0 +1,136 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<html>
+	<head>
+
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+		<title>EvotingApp | Contact Us page</title>
+		<link rel="stylesheet" href="/static/style.css" />
+		<script src="/static/fnt.js" crossorigin="anonymous"></script>
+	</head>
+	<body>
+
+		<div class = "Container">
+			<form class = "loginForm">
+			<div class = "header">
+				<div class="hlogo">
+					<img src="/static/logo.png" alt="logo1" class="banner">
+				</div>
+				<div class = "htitle">
+					<h1>E-Voting System</h1>
+				</div>
+				<div class = "logintype">
+					<ul class="hmenubar">
+						<li><a href = "/adminlogin" target="_blank">admin Login</a></li>
+						<li><a href = "/partylogin" target="_blank">Party Login</a></li>
+					</ul>
+				</div>
+			</div>
+				<div class="nav">
+					<ul class="menubar">
+						<li><a href = "/uhome">Home</a></li>
+						<li><a href = "/ureg" target="_blank">Registration</a></li>
+						<li><a href = "/userv" target="_blank">Services</a></li>
+						<li><a href = "/uabout" target="_blank">About</a></li>
+						<li><a href = "/ucontact">Contact US</a></li>
+					</ul>
+						<div class="search">
+							<form>
+								<input type = "text" placeholder="Search"></input>
+								<input type = "button" value = "Search" style ="height: 24px; width: 63px;"></input>
+							</form>
+						</div>
+				</div>
+				<div>
+				<h2 style="color:red;position:absolute;top:20%;left:43%">{{msg}}</h2>
+				</div>
+				<h1 class = "heading">Contact US</h1>
+				<div class="tb">
+				<form method="post" action="/contactaction/">{% csrf_token %}
+					<table class = "conttbl">
+						<tr>
+							<td><label for = "fname">Name :</label></td>
+							<td><input type = "text" name = "fname" placeholder = "Enter your name" required></td>
+						</tr>
+						<tr>
+							<td><label for = "lname">Last Nane :</label></td>
+							<td><input type = "text" name = "lname"placeholder = "Enter your last name" required></td>
+						</tr>
+						<tr>
+							<td><label for = "email">e-mail id :</label></td>
+							<td><input type = "text" name = "email" placeholder = "Enter your e-mail id"></td>
+						</tr>
+						<tr>
+							<td><label for = "message" >Message :</label></td>
+							<td><textarea id = "message" name = "message" row = "10" placeholder = "Enter House Number" pattern="[A-Za-z/0-9]{3}" title="Three letter country code" required></textarea></td>
+						</tr>
+						<tr>
+							<td colspan = "2" align = "center"><input type = "submit" value = "Send Message"></td>
+						</tr>
+					</table>
+					</form>
+				</div>
+				<div class = "decoration">
+					<div class = "dec">
+						<table>
+							<tr>
+								<th>My Programs :</th>
+							</tr>
+							<tr>
+								<td>E-banking :  ASP.net using MySQL</td>
+							</tr>
+							<tr>
+								<td>Car Showroom : HTML using CSS</td>
+							</tr>
+							<tr>
+								<td>Portfolio : HTML using css and js</td>
+							</tr>
+							<tr>
+								<td>ACME : HTML using css</td>
+							</tr>
+						</table>
+					</div>
+					<div class = "pic">
+						<table>
+							<tr>
+								<th>Personal details:</th>
+							</tr>
+							<tr>
+								<td><i class="fa fa-envelope"></i>: dixitprogrammer@gmail.com</td>
+							</tr>
+							<tr>
+								<td><i class="fa fa-facebook-official">: dixitprogrammer@gmail.com</i></td>
+							</tr>
+							<tr>
+								<td><i class="fa fa-instagram">: dixitprogrammer@gmail.com</i></td>
+							</tr>
+							<tr>
+								<td><i class="fa fa-whatsapp">: 8176913367</i></td>
+							</tr>
+							<tr>
+								<td><i class="fa fa-location-dot"></i>: Lucknow</td>
+							</tr>
+						</table>
+					</div>
+					<div class = "map">
+						<a href = "https://goo.gl/maps/WZzcPbQ47hn8B2mk8">
+						<iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3559.634300672231!2d80.95280531504368!3d26.85158148315381!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x399bfd10368bcbd3%3A0x611a8b7a57a565f5!2sUPTEC%20Computer%20Consultancy%20Ltd.!5e0!3m2!1sen!2sin!4v1648190011784!5m2!1sen!2sin" width="490px" height="156px" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade" ></iframe></a>
+					</div>
+				</div>
+				<div class = "footer">
+					<table class = "foottable">
+						<tr>
+							<td align ="center">e-votingSystem&copy;2022</td>
+							<td><i class="fa fa-envelope"></i><i class="fa fa-facebook-official"></i><i class="fa fa-twiter-official"></i>
+							<i class="fa fa-instagram"></i>
+							</td>
+							
+						</tr>
+					</table>
+				</div>
+			</form>
+			
+		</div>
+	</body>
+</html>
